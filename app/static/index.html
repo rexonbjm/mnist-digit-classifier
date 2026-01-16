@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNIST Digit Classifier</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✨ MNIST Digit Classifier</h1>
+        <p class="subtitle">Draw a digit (0-9) and watch the AI predict it in real-time!</p>
+        
+        <div class="main-content">
+            <div class="canvas-section">
+                <canvas id="canvas" width="280" height="280"></canvas>
+                <div class="controls">
+                    <button id="clearBtn" class="btn btn-secondary">Clear Canvas</button>
+                    <button id="predictBtn" class="btn btn-primary">Predict</button>
+                </div>
+            </div>
+            
+            <div class="results-section">
+                <div class="prediction-box">
+                    <h2>Prediction</h2>
+                    <div id="prediction" class="prediction-digit">?</div>
+                    <div id="confidence" class="confidence">Draw a digit to start</div>
+                </div>
+                
+                <div class="probabilities-box">
+                    <h3>Confidence Distribution</h3>
+                    <div id="probabilities" class="probabilities-container">
+                        <div class="prob-item" data-digit="0">
+                            <span class="digit-label">0</span>
+                            <div class="prob-bar-container">
+                                <div class="prob-bar" style="width: 0%"></div>
+                            </div>
+                            <span class="prob-value">0%</span>
+                        </div>
+                        <div class="prob-item" data-digit="1">
+                            <span class="digit-label">1</span>
+                            <div class="prob-bar-container">
+                                <div class="prob-bar" style="width: 0%"></div>
+                            </div>
+                            <span class="prob-value">0%</span>
+                        </div>
+                        <div class="prob-item" data-digit="2">
+                            <span class="digit-label">2</span>
+                            <div class="prob-bar-container">
+                                <div class="prob-bar" style="width: 0%"></div>
+                            </div>
+                            <span class="prob-value">0%</span>
+                        </div>
+                        <div class="prob-item" data-digit="3">
+                            <span class="digit-label">3</span>
+                            <div class="prob-bar-container">
+                                <div class="prob-bar" style="width: 0%"></div>
+                            </div>
+                            <span class="prob-value">0%</span>
+                        </div>
+                        <div class="prob-item" data-digit="4">
+                            <span class="digit-label">4</span>
+                            <div class="prob-bar-container">
+                                <div class="prob-bar" style="width: 0%"></div>
+                            </div>
+                            <span class="prob-value">0%</span>
+                        </div>
+                        <div class="prob-item" data-digit="5">
+                            <span class="digit-label">5</span>
+                            <div class="prob-bar-container">
+                                <div class="prob-bar" style="width: 0%"></div>
+                            </div>
+                            <span class="prob-value">0%</span>
+                        </div>
+                        <div class="prob-item" data-digit="6">
+                            <span class="digit-label">6</span>
+                            <div class="prob-bar-container">
+                                <div class="prob-bar" style="width: 0%"></div>
+                            </div>
+                            <span class="prob-value">0%</span>
+                        </div>
+                        <div class="prob-item" data-digit="7">
+                            <span class="digit-label">7</span>
+                            <div class="prob-bar-container">
+                                <div class="prob-bar" style="width: 0%"></div>
+                            </div>
+                            <span class="prob-value">0%</span>
+                        </div>
+                        <div class="prob-item" data-digit="8">
+                            <span class="digit-label">8</span>
+                            <div class="prob-bar-container">
+                                <div class="prob-bar" style="width: 0%"></div>
+                            </div>
+                            <span class="prob-value">0%</span>
+                        </div>
+                        <div class="prob-item" data-digit="9">
+                            <span class="digit-label">9</span>
+                            <div class="prob-bar-container">
+                                <div class="prob-bar" style="width: 0%"></div>
+                            </div>
+                            <span class="prob-value">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Powered by TensorFlow & FastAPI | Draw with your mouse or touch</p>
+        </footer>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>

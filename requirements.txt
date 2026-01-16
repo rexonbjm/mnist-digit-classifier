@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+tensorflow==2.16.2
+keras==3.13.0
+pillow
+numpy
+pydantic
+python-multipart
