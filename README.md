@@ -21,22 +21,17 @@ Live Demo: https://mnist-digit-classifier-rzuj.onrender.com
 
 ### Option 1: Docker Deployment (Recommended)
 
-1. **Train the model** (if `mnist_model.keras` doesn't exist):
-   ```bash
-   python mnist.py
-   ```
-
-2. **Build the Docker image**:
+1. **Build the Docker image**:
    ```bash
    docker build -t mnist-classifier .
    ```
 
-3. **Run the container**:
+2. **Run the container**:
    ```bash
    docker run -p 8000:8000 mnist-classifier
    ```
 
-4. **Open your browser** and navigate to:
+3. **Open your browser** and navigate to:
    ```
    http://localhost:8000
    ```
@@ -48,22 +43,12 @@ Live Demo: https://mnist-digit-classifier-rzuj.onrender.com
    pip install -r requirements.txt
    ```
 
-2. **Train the model** (if not already trained):
+2. **Run the FastAPI server**:
    ```bash
-   python mnist.py
+   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
    ```
 
-3. **Run the FastAPI server**:
-   ```bash
-   python app.py
-   ```
-   
-   Or with uvicorn directly:
-   ```bash
-   uvicorn app:app --reload --host 0.0.0.0 --port 8000
-   ```
-
-4. **Open your browser**:
+3. **Open your browser**:
    ```
    http://localhost:8000
    ```
@@ -72,17 +57,19 @@ Live Demo: https://mnist-digit-classifier-rzuj.onrender.com
 
 ```
 mnist-digit-classifier/
-├── app.py                 # FastAPI application
-├── mnist.py              # Model training script
-├── predict_image.py      # CLI prediction script
-├── mnist_model.keras     # Trained model (generated)
-├── requirements.txt      # Python dependencies
-├── Dockerfile           # Docker configuration
-├── README.md           # This file
-└── static/             # Frontend files
-    ├── index.html      # Main web page
-    ├── style.css       # Styling
-    └── script.js       # Canvas & API interaction
+├── app/                  # Application directory
+│   ├── __init__.py
+│   ├── main.py          # FastAPI application
+│   ├── predict_image.py # CLI prediction script
+│   └── static/          # Frontend files
+│       ├── index.html   # Main web page
+│       ├── style.css    # Styling
+│       └── script.js    # Canvas & API interaction
+├── model/
+│   └── mnist_model.keras # Trained model
+├── requirements.txt     # Python dependencies
+├── Dockerfile          # Docker configuration
+└── README.md          # This file
 ```
 
 ## 🎯 API Endpoints
