@@ -1,7 +1,7 @@
 # MNIST Digit Classifier - Docker Deployment
 
 An interactive web application that recognizes handwritten digits (0-9) using a Convolutional Neural Network trained on the MNIST dataset. Draw digits on the canvas and get real-time predictions!
-Live Demo: https://mnist-digit-classifier-rzuj.onrender.com
+Live Demo: https://demo.reksonbajimaya.com.np/mnist
 
 ## ✨ Features
 
